@@ -12,7 +12,7 @@ pipeline {
     git_commit_author_email = ''
   }
 
-  //stages {
+  stages {
 
     // Build
     stage('Build') {
@@ -35,7 +35,7 @@ pipeline {
                 sh 'make publish'
             }
         }
-
+  }
   post {
     success {
       sh "echo 'Send mail on success'"
