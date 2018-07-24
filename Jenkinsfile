@@ -31,19 +31,19 @@ pipeline {
                 currentBuild.result == null || currentBuild.result == 'SUCCESS' (1)
               }
             }
-            steps {
-                sh 'make publish'
-            }
+            //steps {
+                //sh 'make publish'
+            //}
         }
   }
   post {
     success {
       sh "echo 'Send mail on success'"
-       mail to:"sandeep.krs@hcl.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
+       //mail to:"sandeep.krs@hcl.com", subject:"SUCCESS: ${currentBuild.fullDisplayName}", body: "Yay, we passed."
     }
     failure {
       sh "echo 'Send mail on failure'"
-       mail to:"sandeep.krs@hcl.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
+       //mail to:"sandeep.krs@hcl.com", subject:"FAILURE: ${currentBuild.fullDisplayName}", body: "Boo, we failed."
     }
   }
 }
