@@ -1,6 +1,12 @@
 node {
     def server = Artifactory.server 'GAIC'
     //def rtMaven = Artifactory.newMavenBuild()
+    def rtGradle = Artifactory.newGradleBuild()
+    rtGradle.resolver server: server, repo: 'libs-release'
+    rtGradle.deployer server: server, repo: 'libs-release-local'
+    rtGradle.deployer.deployArtifacts buildInfo
+    server.publishBuildInfo buildInfo
+        
     def buildInfo
 
     stage ('Build') {
