@@ -12,7 +12,7 @@ pipeline {
     git_commit_author_email = ''
   }
 
-  stages {
+  //stages {
 
     // Build
     stage('Build') {
