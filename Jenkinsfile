@@ -4,7 +4,7 @@ node {
     def buildInfo
 
     stage ('Build') {
-        //git url: 'https://github.com/sandeep100/gaic-informatica-poc.git'
+        git url: 'https://github.com/sandeep100/gaic-informatica-poc.git'
         checkout scm
     }
 
