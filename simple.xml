@@ -40,5 +40,5 @@
       <artifactId>build-info-extractor</artifactId>
       <version>2.5.2</version>
     </dependency>
-  </dependencies>
+  </dependencies> 
 </project>
