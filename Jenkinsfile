@@ -21,8 +21,4 @@ node {
     stage ('Artifactory configuration') {
               sh "curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T note.zip https://gaic.jfrog.io/gaic/sandeep/"  
     }
-
-    stage ('Publish build info') {
-        server.publishBuildInfo buildInfo
-    }
 }
