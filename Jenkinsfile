@@ -12,7 +12,8 @@ node {
     stage ('Build') {
         git url: 'https://github.com/sandeep100/gaic-informatica-poc.git'
         checkout scm
-       cp http://18.218.176.242/var/lib/jenkins/workspace/jfrog-example@script/note.xml https://gaicjfrog.io/gaic/sandeep/
+       //cp http://18.218.176.242/var/lib/jenkins/workspace/jfrog-example@script/note.xml https://gaicjfrog.io/gaic/sandeep/
+           sh "scp -r ${ http://18.218.176.242/var/lib/jenkins/workspace/jfrog-example@script/note.xml} ${ https://gaicjfrog.io/gaic/sandeep/}"
        //curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T /var/lib/jenkins/workspace/jfrog-example@script/note.xml "https://gaicjfrog.io/gaic/sandeep/"
     }
 
