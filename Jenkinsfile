@@ -9,27 +9,18 @@ node {
         
     def buildInfo
 
-    stage ('Build') {
+    stage ('Checkout') {
         git url: 'https://github.com/sandeep100/gaic-informatica-poc.git'
         checkout scm
-       //cp http://18.218.176.242/var/lib/jenkins/workspace/jfrog-example@script/note.xml https://gaicjfrog.io/gaic/sandeep/
-         //  sh "scp -r ${ http://18.218.176.242/var/lib/jenkins/workspace/jfrog-example@script/note.xml} ${ https://gaicjfrog.io/gaic/sandeep/}"
-        sh "curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T note.xml https://gaic.jfrog.io/gaic/sandeep/"
-        //sh 'curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T note.xml "https://gaicjfrog.io/gaic/sandeep/"'
+       }
+    
+    stage ('Build Package') {
+    sh "zip note.zip note.xml"
     }
 
     stage ('Artifactory configuration') {
-        //rtMaven.tool = 'M3' // Tool name from Jenkins configuration
-        //rtMaven.deployer releaseRepo: 'sandeep', snapshotRepo: 'sandeep', server: server
-        //rtMaven.resolver releaseRepo: 'sandeep', snapshotRepo: 'libs-snapshot', server: server
-        buildInfo = Artifactory.newBuildInfo()
-        buildInfo.env.capture=true
-        
+              sh "curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T note.zip https://gaic.jfrog.io/gaic/sandeep/"  
     }
-
-    //stage ('Exec Maven') {
-      //  rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean install', buildInfo: buildInfo
-    //}
 
     stage ('Publish build info') {
         server.publishBuildInfo buildInfo
