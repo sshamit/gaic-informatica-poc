@@ -14,8 +14,8 @@ node {
         checkout scm
        //cp http://18.218.176.242/var/lib/jenkins/workspace/jfrog-example@script/note.xml https://gaicjfrog.io/gaic/sandeep/
          //  sh "scp -r ${ http://18.218.176.242/var/lib/jenkins/workspace/jfrog-example@script/note.xml} ${ https://gaicjfrog.io/gaic/sandeep/}"
-        sh "curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T /var/lib/jenkins/workspae/jfrog-example@script/note.xml https://gaic.jfrog.io/gaic/sandeep/"
-        //sh 'curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T /var/lib/jenkins/workspace/jfrog-example@script/note.xml "https://gaicjfrog.io/gaic/sandeep/"'
+        sh "curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T note.xml https://gaic.jfrog.io/gaic/sandeep/"
+        //sh 'curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T note.xml "https://gaicjfrog.io/gaic/sandeep/"'
     }
 
     stage ('Artifactory configuration') {
