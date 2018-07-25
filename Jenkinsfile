@@ -19,6 +19,7 @@ node {
         //rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
         //rtMaven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server
         buildInfo = Artifactory.newBuildInfo()
+        buildInfo.deployer releaseRepo: 'sandeep', snapshotRepo: 'sandeep', server: server
         buildInfo.env.capture=true
     }
 
