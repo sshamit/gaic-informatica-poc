@@ -1,6 +1,6 @@
 node {
     def server = Artifactory.server 'GAIC'
-    def rtMaven = Artifactory.newMavenBuild()
+    //def rtMaven = Artifactory.newMavenBuild()
     //def rtGradle = Artifactory.newGradleBuild()
     //rtGradle.resolver server: server, repo: 'libs-release'
     //rtGradle.deployer server: server, repo: 'libs-release-local'
@@ -15,11 +15,12 @@ node {
     }
 
     stage ('Artifactory configuration') {
-        rtMaven.tool = 'M3' // Tool name from Jenkins configuration
-        rtMaven.deployer releaseRepo: 'sandeep', snapshotRepo: 'sandeep', server: server
-        rtMaven.resolver releaseRepo: 'sandeep', snapshotRepo: 'libs-snapshot', server: server
+        //rtMaven.tool = 'M3' // Tool name from Jenkins configuration
+        //rtMaven.deployer releaseRepo: 'sandeep', snapshotRepo: 'sandeep', server: server
+        //rtMaven.resolver releaseRepo: 'sandeep', snapshotRepo: 'libs-snapshot', server: server
         buildInfo = Artifactory.newBuildInfo()
         buildInfo.env.capture=true
+        
     }
 
     //stage ('Exec Maven') {
