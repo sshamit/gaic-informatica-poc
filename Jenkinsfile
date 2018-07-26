@@ -20,7 +20,7 @@ node {
 
     stage ('Artifactory configuration') {
               //sh "curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T note.zip https://gaic.jfrog.io/gaic/sandeep/"  
-             server.upload('note.zip')
+             server.upload(note.zip)
              server.publishBuildInfo buildInfo
     }
 }
