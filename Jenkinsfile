@@ -14,13 +14,21 @@ node {
         checkout scm
        }
     
-    //stage ('Build Package') {
-    //sh "zip note.zip note.xml"//, buildInfo: buildInfo
-    //}
+    stage ('Build Package') {
+    sh "zip note.zip note.xml"//, buildInfo: buildInfo
+    }
 
     stage ('Artifactory configuration') {
               //sh "curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T note.zip https://gaic.jfrog.io/gaic/sandeep/"  
-             server.upload(note.zip)
+             def uploadSpec = """{
+              "files": [
+               {
+           "pattern": "./*.zip",
+           "target": "./"
+         }
+      ]
+      }"""
+         server.upload(uploadSpec)
              server.publishBuildInfo buildInfo
     }
 }
