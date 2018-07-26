@@ -23,7 +23,7 @@ node {
              def uploadSpec = """{
               "files": [
                {
-           "pattern": "zip",
+           "pattern": ".zip",
            "target": "sandeep/"
          }
       ]
