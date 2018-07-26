@@ -20,15 +20,7 @@ node {
 
     stage ('Artifactory configuration') {
               //sh "curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T note.zip https://gaic.jfrog.io/gaic/sandeep/"  
-        def uploadSpec = """{
-  "files": [
-    {
-      "pattern": "*xml.zip",
-      "target": "sandeep/"
-    }
- ]
-}"""
-server.upload(uploadSpec)
+             server.upload('note.zip')
              server.publishBuildInfo buildInfo
     }
 }
