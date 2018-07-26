@@ -24,7 +24,7 @@ node {
               "files": [
                {
            "pattern": "./*.zip",
-           "target": "./"
+           "target": "sandeep/"
          }
       ]
       }"""
