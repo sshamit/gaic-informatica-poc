@@ -15,7 +15,7 @@ node {
        }
     
     stage ('Build Package') {
-    sh "zip note.zip note.xml"//, buildInfo: buildInfo
+    sh "zip xml.zip *.xml"//, buildInfo: buildInfo
     }
 
     stage ('Artifactory configuration') {
