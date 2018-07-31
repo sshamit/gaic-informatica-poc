@@ -23,7 +23,7 @@ node {
              def uploadSpec = """{
               "files": [
                {
-           "pattern": "*.xml",
+           "pattern": "*.XML",
            "target": "sandeep/"
          }
       ]
