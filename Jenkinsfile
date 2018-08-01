@@ -16,7 +16,7 @@ node {
     
     stage ('Build Package') {
     //sh "zip all_xml.zip *.xml"  //, buildInfo: buildInfo
-        jar -cf {xml_files.zip} {test.XML}
+        jar -cf {xml_files.zip} {temp1.XML}
     }
 
     stage ('Artifactory configuration') {
