@@ -18,7 +18,7 @@ node {
     //sh "zip all_xml.zip *.xml"  //, buildInfo: buildInfo
         //jar -cf {xml_files.zip} {*.XML}
     }
-
+ 
     stage ('Artifactory configuration') {
               //sh "curl -uadmin:AP3nXfJVKuB7LhXsJxPkyp2vfM -T note.zip https://gaic.jfrog.io/gaic/sandeep/"  
              def uploadSpec = """{
