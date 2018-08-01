@@ -1,4 +1,4 @@
-node {
+node { 
     def server = Artifactory.server 'GAICJFROG' //'GAIC'
     //def rtMaven = Artifactory.newMavenBuild()
     //def rtGradle = Artifactory.newGradleBuild()
