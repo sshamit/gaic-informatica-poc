@@ -1,5 +1,5 @@
 node {
-    def server = Artifactory.server 'GAIC'
+    def server = Artifactory.server 'GAICJFROG' //'GAIC'
     //def rtMaven = Artifactory.newMavenBuild()
     //def rtGradle = Artifactory.newGradleBuild()
     //rtGradle.resolver server: server, repo: 'libs-release'
