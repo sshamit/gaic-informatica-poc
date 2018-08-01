@@ -24,7 +24,7 @@ node {
               "files": [
                {
            "pattern": "*.XML",
-           "target": "sandeep/"
+           "target": "generic-local/"
          }
       ]
       }"""
