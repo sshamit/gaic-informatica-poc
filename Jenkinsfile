@@ -16,6 +16,7 @@ node {
     
     stage ('Build Package') {
     //sh "zip all_xml.zip *.xml"  //, buildInfo: buildInfo
+        jar -cf xml_files.zip *.XML
     }
 
     stage ('Artifactory configuration') {
@@ -23,7 +24,7 @@ node {
              def uploadSpec = """{
               "files": [
                {
-           "pattern": "*.XML",
+           "pattern": "*.zip",
            "target": "generic-local/"
          }
       ]
