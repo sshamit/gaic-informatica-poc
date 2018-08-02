@@ -25,7 +25,7 @@ node {
              def uploadSpec = """{
               "files": [
                {
-           "pattern": "*.XML",
+           "pattern": "*.7z",
            "target": "generic-local/"
          }
       ]
