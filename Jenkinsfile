@@ -33,4 +33,4 @@ node {
          server.upload(uploadSpec)
              //server.publishBuildInfo buildInfo 
     }
-} 
+}  
