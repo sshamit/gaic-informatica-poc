@@ -1,10 +1,6 @@
 node { 
     def server = Artifactory.server 'GAICJFROG' //'GAIC' 
-    //def rtMaven = Artifactory.newMavenBuild()
-    //def rtGradle = Artifactory.newGradleBuild()
-    //rtGradle.resolver server: server, repo: 'libs-release'
-    //rtGradle.deployer server: server, repo: 'libs-release-local'
-    //rtGradle.deployer.deployArtifacts buildInfo
+
     //server.publishBuildInfo buildInfo
         
     //def buildInfo = Artifactory.newBuildInfo()
@@ -15,9 +11,9 @@ node {
        }
     
     stage ('Build Package') {
-    //sh "zip all_xml.zip *.xml"  //, buildInfo: buildInfo
+    sh 'zip all_xml.zip *.xml'  //, buildInfo: buildInfo
         //jar -cf {xml_files.zip} {*.XML}
-        bat "7za a xml_zip_files *.XML"
+    //    bat "7za a xml_zip_files *.XML"
     }
  
     stage ('Artifactory configuration') {
@@ -25,8 +21,8 @@ node {
              def uploadSpec = """{
               "files": [
                {
-           "pattern": "*.7z",
-           "target": "generic-local/"
+           "pattern": "*.zip",
+           "target": "example-repo-local/"
          }
       ]
       }"""
