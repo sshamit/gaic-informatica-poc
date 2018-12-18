@@ -11,7 +11,7 @@ node {
        }
     
     stage ('Build Package') {
-    sh 'zip all_xml.zip *.XML'  //, buildInfo: buildInfo
+        sh 'zip all_xml-"${BUILD_NUMBER}".zip *.XML'  //, buildInfo: buildInfo
         //jar -cf {xml_files.zip} {*.XML}
     //    bat "7za a xml_zip_files *.XML"
     }
