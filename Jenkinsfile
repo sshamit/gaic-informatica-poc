@@ -21,7 +21,7 @@ node {
              def uploadSpec = """{
               "files": [
                {
-           "pattern": "*.zip",
+           "pattern": "*-${BUILD_NUMBER}.zip",
            "target": "example-repo-local/"
          }
       ]
